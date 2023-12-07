@@ -1,0 +1,38 @@
+@use "../../style/variables.scss" as *;
+
+nav {
+  background-color: $color-nav-footer;
+  color: white;
+  width: 100%;
+  height: 60px;
+  
+ 
+  .navigation {
+    width: 1200px;
+    margin: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 20px;
+    .burgerMenu {
+      position: absolute;
+      right: 5%;
+      font-size: 2rem;
+      ul{
+        list-style-type: none;
+        position: absolute;
+        top: 60px;
+        right: 0;
+        li{
+            padding-bottom: 10px;
+            a{
+                text-decoration: none;
+                color: black;
+            }
+        }
+        
+      }
+
+    }
+  }
+}

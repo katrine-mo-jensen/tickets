@@ -1,13 +1,8 @@
-
-import style from "./LoginPage.module.scss"
-
-export const LoginPage = () => {
-
-
+export const SignupPage = () => {
     return(
         <section>
             <section>
-                <h1>Log ind</h1>
+                <h1>Tilmeld</h1>
                 <form>
                     <label>
                         <p>Email:</p>
@@ -18,7 +13,7 @@ export const LoginPage = () => {
                         <input type="password" />
                     </label>
                     <div>
-                        <button type="sumbit">Log ind</button>
+                        <button type="sumbit">Opret</button>
                         <button><Link to=""/></button>
                     </div>
                 </form>

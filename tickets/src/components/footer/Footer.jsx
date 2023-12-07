@@ -1,7 +1,9 @@
+import style from "./footer.module.scss"
+
 export const Footer = () => {
   return (
     <footer>
-      <section>
+      <section className={style.footer}>
         <p>
           Adresse: <br />
           Kongens Alle 23 <br />

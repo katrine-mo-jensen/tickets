@@ -3,6 +3,7 @@ import style from "./navBar.module.scss";
 import { FaUserCircle } from "react-icons/fa";
 import { IoMdCloseCircle } from "react-icons/io";
 import { useState } from "react";
+import { Link } from "react-router-dom";
 
 export const Navigation = () => {
   const [open, setOpen] = useState(false);
@@ -16,7 +17,8 @@ export const Navigation = () => {
   return (
     <nav>
       <section className={style.navigation}>
-        <h2>Book.it - Din online event kalender</h2>
+        <Link className={style.title} to="/"><h2>Book.it - Din online event kalender</h2></Link>
+        
         <section className={style.burgerMenu}>
           {open ? burgerClosed : burgerOpen}
           {open && <NavLinks />}

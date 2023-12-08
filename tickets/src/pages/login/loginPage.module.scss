@@ -1,0 +1,40 @@
+@use "../../style/variables.scss" as *;
+
+.container {
+  width: 100%;
+  background-color: $color-grey;
+  display: flex;
+
+  align-items: center;
+  .form {
+    width: 552px;
+    background-color: $color-light-grey;
+    margin: auto;
+    border-radius: 16px;
+    margin-top: 52px;
+    margin-bottom: 52px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    section {
+      button {
+        width: 94px;
+        height: 40px;
+        border-radius: 16px;
+        border: none;
+        color: white;
+      }
+      .rightBtn {
+        background-color: $color-dark-grey;
+      }
+      .leftBtn {
+        background-color: $color-greenery;
+        text-decoration: none;
+        .link {
+          text-decoration: none;
+          color: white;
+        }
+      }
+    }
+  }
+}

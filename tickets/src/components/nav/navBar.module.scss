@@ -12,6 +12,10 @@ nav {
     margin: auto;
     display: flex;
     justify-content: center;
+    .title{
+      text-decoration: none;
+      color: white;
+    }
     .burgerMenu {
       position: absolute;
       right: 5%;

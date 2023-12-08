@@ -1,12 +1,16 @@
 import { Link } from "react-router-dom";
 import style from "./LoginPage.module.scss";
 
-export const LoginPage = () => {
+export const SignupPage = () => {
   return (
     <section className={style.container}>
       <section className={style.form}>
-        <h1>Log ind</h1>
+        <h1>Tilmeld</h1>
         <form>
+          <label>
+            <p>Navn:</p>
+            <input type="text" />
+          </label>
           <label>
             <p>Email:</p>
             <input type="email" />
@@ -15,10 +19,18 @@ export const LoginPage = () => {
             <p>Password:</p>
             <input type="password" />
           </label>
+          <label>
+            <p>Telefon:</p>
+            <input type="number" />
+          </label>
           <section>
-            <button className={style.rightBtn} type="sumbit">Log ind</button>
+            <button className={style.rightBtn} type="sumbit">
+              Opret
+            </button>
             <button className={style.leftBtn}>
-              <Link className={style.link} to="/signup">Tilmeld</Link>
+              <Link className={style.link} to="/login">
+                Login
+              </Link>
             </button>
           </section>
         </form>

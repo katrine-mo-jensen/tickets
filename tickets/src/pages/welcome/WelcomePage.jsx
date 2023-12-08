@@ -1,7 +1,11 @@
+import { useContext, useEffect, useState } from "react"
+import { UserContext } from "../../components/context/userContext" 
+
 export const WelcomePage = () => {
+    const {user} = useContext(UserContext)
     return(
         <section>
-            <h1>Welcome Name</h1>
+            {user ? <p>Velkommen {user.user.firstname} {user.user.lastname}</p> : <p>Du er ikke logget ind</p>}
         </section>
     )
 }

@@ -35,28 +35,26 @@ export const LoginPage = () => {
       setErrorMsg("");
       let url = `http://localhost:8081/sign-in`;
       let body = new URLSearchParams();
-      body.append("username", email);
+      body.append("email", email);
       body.append("password", password);
       let options = {
         body: body,
         method: "POST",
-        headers: {
-          "Access-Control-Allow-Origin": "*",
-          "Content-Type": "text/plain",
-          mode: "no-cors",
-        },
       };
       fetch(url, options)
         .then((res) => res.json())
-        .then((data) => saveUserData(data));
+        .then((data) => {
+          console.log("Data from signup:", data);
+          saveUserData(data);
+        });
     }
   };
   return (
     <section className={style.container}>
       <section className={style.form}>
-        <h1>Log ind</h1>
         {!isLoggedIn ? (
           <section>
+            <h1>Log ind</h1>
             <form
               onSubmit={(event) => {
                 handleLogin(event);
@@ -87,14 +85,18 @@ export const LoginPage = () => {
           </section>
         ) : (
           <section>
-            <h1>
-              Velkommen {user.users.name} 
-            </h1>
-            <p>{user.users.name}</p>
-            <p>Email: {user.users.email}</p>
-            <p>Tlf: {user.users.phone}</p>
-            <button onClick={handleLogout}>Logout</button>
-            <button> <Link to="/booking">Dine Events</Link></button>
+            <h1>Velkommen {user.name}</h1>
+            <p>{user.name}</p>
+            <p>Email: {user.email}</p>
+            <p>Tlf: {user.phone}</p>
+            <button className={style.rightBtn}>
+              <Link className={style.link} to="/booking">
+                Dine Events
+              </Link>
+            </button>
+            <button className={style.leftBtn} onClick={handleLogout}>
+              Logout
+            </button>
           </section>
         )}
       </section>

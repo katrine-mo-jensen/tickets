@@ -30,16 +30,11 @@ export const SignupPage = () => {
       const options = {
         body: body,
         method: "POST",
-        headers: {
-          "Access-Control-Allow-Origin": "*",
-          "Content-Type": "application/x-www-form-urlencoded",
-        },
-        mode: "no-cors",
       };
 
       // poster dem til serveren
       fetch(url, options)
-        .then((res) => console.log(res))
+        .then((res) => res.json())
         .then((data) => console.log(data));
     } else {
       setError("Udfyld venligst alle felter");
@@ -52,7 +47,11 @@ export const SignupPage = () => {
         <h1>Tilmeld</h1>
         <form onSubmit={(event) => handleSubmit(event)}>
           <InputField type="text" name="name" placeholder="Enter your name" />
-          <InputField type="email" name="mail" placeholder="Enter your email" />
+          <InputField
+            type="email"
+            name="email"
+            placeholder="Enter your email"
+          />
           <InputField
             type="password"
             name="password"

@@ -1,9 +1,9 @@
 import { Link } from "react-router-dom";
 import { useState } from "react";
 import style from "./LoginPage.module.scss";
+import { InputField } from "../../components/InputField";
 
 export const SignupPage = () => {
-
   const [error, setError] = useState("");
 
   // Submit funktion der opretter en ny bruger i backenden
@@ -26,19 +26,20 @@ export const SignupPage = () => {
       body.append("email", email);
       body.append("password", password);
       body.append("phone", phone);
-      body.append("is_active", true);
-      body.append("org_id", 1);
-      body.append("refresh_token", 1234);
-      body.append("groups", 1);
 
       const options = {
         body: body,
         method: "POST",
+        headers: {
+          "Access-Control-Allow-Origin": "*",
+          "Content-Type": "application/x-www-form-urlencoded",
+        },
+        mode: "no-cors",
       };
 
       // poster dem til serveren
       fetch(url, options)
-        .then((res) => res.json())
+        .then((res) => console.log(res))
         .then((data) => console.log(data));
     } else {
       setError("Udfyld venligst alle felter");
@@ -50,22 +51,19 @@ export const SignupPage = () => {
       <section className={style.form}>
         <h1>Tilmeld</h1>
         <form onSubmit={(event) => handleSubmit(event)}>
-          <label>
-            <p>Navn:</p>
-            <input type="text" name ="name"/>
-          </label>
-          <label>
-            <p>Email:</p>
-            <input type="email" name ="email"/>
-          </label>
-          <label>
-            <p>Password:</p>
-            <input type="password" name="password"/>
-          </label>
-          <label>
-            <p>Telefon:</p>
-            <input type="number" name="phone"/>
-          </label>
+          <InputField type="text" name="name" placeholder="Enter your name" />
+          <InputField type="email" name="mail" placeholder="Enter your email" />
+          <InputField
+            type="password"
+            name="password"
+            placeholder="Enter your password"
+          />
+          <InputField
+            type="number"
+            name="phone"
+            placeholder="Enter your phone number"
+          />
+
           <section>
             <button className={style.rightBtn} type="sumbit">
               Opret
@@ -76,6 +74,7 @@ export const SignupPage = () => {
               </Link>
             </button>
           </section>
+          <b>{error}</b>
         </form>
       </section>
     </section>

@@ -2,6 +2,7 @@ import { Link } from "react-router-dom";
 import style from "./LoginPage.module.scss";
 import { useContext, useState } from "react";
 import { UserContext } from "../../components/context/userContext";
+import { InputField } from "../../components/InputField";
 
 export const LoginPage = () => {
   const [errorMsg, setErrorMsg] = useState("");
@@ -36,7 +37,15 @@ export const LoginPage = () => {
       let body = new URLSearchParams();
       body.append("username", email);
       body.append("password", password);
-      let options = { body: body, method: "POST" };
+      let options = {
+        body: body,
+        method: "POST",
+        headers: {
+          "Access-Control-Allow-Origin": "*",
+          "Content-Type": "text/plain",
+          mode: "no-cors",
+        },
+      };
       fetch(url, options)
         .then((res) => res.json())
         .then((data) => saveUserData(data));
@@ -48,45 +57,44 @@ export const LoginPage = () => {
         <h1>Log ind</h1>
         {!isLoggedIn ? (
           <section>
-        <form
-          onSubmit={(event) => {
-            handleLogin(event);
-          }}
-        >
-          <label>
-            <p>Email:</p>
-            <input type="email" name="email" />
-          </label>
-          <label>
-            <p>Password:</p>
-            <input
-              type="password"
-              name="password"
-            />
-          </label>
-          <section>
-            <button
-              className={style.rightBtn}
-              type="sumbit"
-              
+            <form
+              onSubmit={(event) => {
+                handleLogin(event);
+              }}
             >
-              Log ind
-            </button>
-            <button className={style.leftBtn}>
-              <Link className={style.link} to="/signup">
-                Tilmeld
-              </Link>
-            </button>
+              <InputField
+                name="email"
+                placeholder="Please enter your email"
+                type="email"
+              />
+              <InputField
+                name="password"
+                placeholder="Please enter your password"
+                type="password"
+              />
+              <section>
+                <button className={style.rightBtn} type="sumbit">
+                  Log ind
+                </button>
+                <button className={style.leftBtn}>
+                  <Link className={style.link} to="/signup">
+                    Tilmeld
+                  </Link>
+                </button>
+              </section>
+            </form>
+            <b>{errorMsg}</b>
           </section>
-        </form>
-        <b>{errorMsg}</b>
-        </section>
         ) : (
           <section>
-            <p>
-              Velkommen {user.user.firstname} {user.user.lastname}
-            </p>
+            <h1>
+              Velkommen {user.users.name} 
+            </h1>
+            <p>{user.users.name}</p>
+            <p>Email: {user.users.email}</p>
+            <p>Tlf: {user.users.phone}</p>
             <button onClick={handleLogout}>Logout</button>
+            <button> <Link to="/booking">Dine Events</Link></button>
           </section>
         )}
       </section>

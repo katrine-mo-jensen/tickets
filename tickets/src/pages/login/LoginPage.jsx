@@ -86,12 +86,10 @@ export const LoginPage = () => {
         ) : (
           <section>
             <h1>Velkommen {user.name}</h1>
-            <p>{user.name}</p>
-            <p>Email: {user.email}</p>
-            <p>Tlf: {user.phone}</p>
+            
             <button className={style.rightBtn}>
-              <Link className={style.link} to="/booking">
-                Dine Events
+              <Link className={style.link} to="/welcome">
+                Dine profil
               </Link>
             </button>
             <button className={style.leftBtn} onClick={handleLogout}>

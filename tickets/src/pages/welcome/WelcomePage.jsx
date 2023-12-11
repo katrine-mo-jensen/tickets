@@ -25,7 +25,7 @@ export const WelcomePage = () => {
           <p>Tlf: {user.phone}</p>
           <section>
             <button className={style.rightBtn}>
-              <Link className={style.link} to="/booking">
+              <Link className={style.link} to="/overview">
                 Dine events
               </Link>
             </button>

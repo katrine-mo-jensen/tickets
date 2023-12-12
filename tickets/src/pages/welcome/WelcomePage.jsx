@@ -1,11 +1,9 @@
-import { useContext,  } from "react";
+import { useContext } from "react";
 import { UserContext } from "../../components/context/userContext";
 import style from "../welcome/WelcomePage.module.scss";
 import { Link } from "react-router-dom";
 
-
 export const WelcomePage = () => {
-  
   const { setIsLoggedIn, user, setUser, isLoggedIn, saveUserData } =
     useContext(UserContext);
 
@@ -35,7 +33,14 @@ export const WelcomePage = () => {
           </section>
         </section>
       ) : (
-        <p>Du er ikke logget ind</p>
+        <section>
+          <p>Du er ikke logget ind</p>
+          <button className={style.leftBtn}>
+            <Link className={style.link} to="/login">
+              Login
+            </Link>
+          </button>
+        </section>
       )}
     </section>
   );

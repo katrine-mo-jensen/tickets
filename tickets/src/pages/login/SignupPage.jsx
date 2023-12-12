@@ -58,7 +58,7 @@ export const SignupPage = () => {
             placeholder="Enter your password"
           />
           <InputField
-            type="number"
+            type="tel"
             name="phone"
             placeholder="Enter your phone number"
           />

@@ -1,20 +1,20 @@
-/**
- * @param {*} props
- * @param props.name - the name of the input
- * @param props.type - type of input
- * @param props.placeholder - placeholder text of input
- * @returns a label and an input field
- */
 export const InputField = (props) => {
-    return (
-      <div style={{ display: "grid", gridTemplateRows: "1fr 1fr" }}>
-        <label htmlFor={props.name}>{props.name}</label>
-        <input
-          autoComplete="on"
-          name={props.name}
-          type={props.type}
-          placeholder={props.placeholder}
-        />
-      </div>
-    );
+  const handleChange = (event) => {
+    if (props.onChange) {
+      props.onChange(event); // Propagate the event to the parent component
+    }
   };
+
+  return (
+    <div>
+      <label htmlFor={props.name}>{props.name}</label>
+      <input
+        autoComplete="on"
+        name={props.name}
+        type={props.type}
+        placeholder={props.placeholder}
+        onChange={handleChange} // Trigger the onChange event
+      />
+    </div>
+  );
+};

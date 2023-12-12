@@ -1,6 +1,6 @@
 import React, { useContext, useEffect, useState } from "react";
 import { UserContext } from "../../components/context/userContext";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, Link } from "react-router-dom";
 import style from "../bookings/booking.module.scss";
 
 //~~!!Edit and register button doesnt work yet!!~~
@@ -86,7 +86,7 @@ export const BookingPage = () => {
         <button className={style.remove} onClick={() => handleDeleteAll()}>
           Fjern alle
         </button>
-        <button className={style.register}>Opret ny</button>
+        <button className={style.register}><Link to="/register">Opret</Link></button>
       </section>
     </section>
   );

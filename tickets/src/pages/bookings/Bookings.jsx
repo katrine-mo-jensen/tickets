@@ -3,7 +3,7 @@ import { UserContext } from "../../components/context/userContext";
 import { useNavigate } from "react-router-dom";
 import style from "../bookings/booking.module.scss";
 
-//~~!!Edit, remove all and register button doesnt work yet!!~~
+//~~!!Edit and register button doesnt work yet!!~~
 
 export const BookingPage = () => {
   const [eventData, setEventData] = useState([]);
@@ -45,6 +45,19 @@ export const BookingPage = () => {
       )
       .catch((error) => console.error("Error deleting data:", error));
   };
+  const handleDeleteAll = () => {
+    let url = `http://localhost:8081/deleteAll`;
+    let options = {
+      method: "DELETE",
+      headers: { Authorization: `Bearer ${user.accessToken}` },
+    };
+    fetch(url, options)
+      .then((res) => res.json())
+      .then((data) =>
+        data.message ? fetchEventData() : alert("Der skete en fejl")
+      )
+      .catch((error) => console.error("Error deleting data:", error));
+  };
 
   return (
     <section className={style.back}>
@@ -70,7 +83,9 @@ export const BookingPage = () => {
               </div>
             </article>
           ))}
-        <button className={style.remove}>Fjern alle</button>
+        <button className={style.remove} onClick={() => handleDeleteAll()}>
+          Fjern alle
+        </button>
         <button className={style.register}>Opret ny</button>
       </section>
     </section>

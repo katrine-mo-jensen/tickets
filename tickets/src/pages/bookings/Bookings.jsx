@@ -1,6 +1,9 @@
 import React, { useContext, useEffect, useState } from "react";
 import { UserContext } from "../../components/context/userContext";
 import { useNavigate } from "react-router-dom";
+import style from "../bookings/booking.module.scss";
+
+//~~!!Edit, remove all and register button doesnt work yet!!~~
 
 export const BookingPage = () => {
   const [eventData, setEventData] = useState([]);
@@ -44,8 +47,8 @@ export const BookingPage = () => {
   };
 
   return (
-    <section>
-      <section>
+    <section className={style.back}>
+      <section className={style.neck}>
         <h1>Mine bookings</h1>
 
         {Array.isArray(eventData) &&
@@ -53,11 +56,22 @@ export const BookingPage = () => {
             <article key={index}>
               <p>{item.title}</p>
               <p>Sted: {item.location}</p>
-              <p>Tid: {item.time}</p>
-              <button onClick={() => handleDelete(item.id)}>Fjern</button>
-              <button>Rediger</button>
+              <p>
+                Tid: {item.time} - {item.date}
+              </p>
+              <div>
+                <button
+                  className={style.remove}
+                  onClick={() => handleDelete(item.id)}
+                >
+                  Fjern
+                </button>
+                <button className={style.edit}>Rediger</button>
+              </div>
             </article>
           ))}
+        <button className={style.remove}>Fjern alle</button>
+        <button className={style.register}>Opret ny</button>
       </section>
     </section>
   );

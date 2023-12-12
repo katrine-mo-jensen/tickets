@@ -1,7 +1,55 @@
+import React, { useContext, useEffect, useState } from "react";
+import { UserContext } from "../../components/context/userContext";
+import { useNavigate } from "react-router-dom";
+import style from "../overview/overview.module.scss"
+
+//~~!!Edit button doesnt work yet!!~~
+
+
 export const OverviewPage = () => {
-    return(
-        <section>
-            <h1>Din oversigt</h1>
-        </section>
-    )
-}
+  const [eventData, setEventData] = useState([]);
+  const { user } = useContext(UserContext);
+  const navigate = useNavigate();
+
+  const fetchEventData = () => {
+    let url = "http://localhost:8081/getAll";
+    let options = {
+      headers: { Authorization: `Bearer ${user.accessToken}` },
+    };
+    fetch(url, options)
+      .then((res) => res.json())
+      .then((data) => {
+        setEventData(data);
+        console.log("Data event:", data);
+      })
+      .catch((error) => console.error("Error fetching data:", error));
+  };
+
+  useEffect(() => {
+    if (user) {
+      fetchEventData();
+    } else {
+      navigate("/login");
+    }
+  }, [user, navigate]);
+
+
+
+  return (
+    <section className={style.container}>
+      <section>
+        <h1>Min oversigt</h1>
+
+        {Array.isArray(eventData) &&
+          eventData.map((item, index) => (
+            <article key={index}>
+              <p>{item.title}</p>
+              <p>Sted: {item.location}</p>
+              <p>Tid: {item.time} {item.date}</p>
+              
+            </article>
+          ))}
+      </section>
+    </section>
+  );
+};

@@ -1,0 +1,46 @@
+@use "../../style/variables.scss" as *;
+
+.back {
+  width: 100%;
+  background-color: $color-grey;
+  display: flex;
+  align-items: center;
+  .neck {
+    width: 1000px;
+    background-color: $color-light-grey;
+    margin: auto;
+    border-radius: 16px;
+    margin-top: 27px;
+    margin-bottom: 27px;
+    text-align: center;
+    article {
+      width: 95%;
+      margin: auto;
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr 1fr;
+      text-align: center;
+      background-color: white;
+      border-radius: 16px;
+      align-items: center;
+      margin-bottom: 20px;
+      padding-top: 10px;
+      padding-bottom: 10px;
+    }
+    button {
+      color: white;
+      border: none;
+      border-radius: 16px;
+      padding: 10px;
+    }
+    .remove {
+      background-color: $color-btn-red;
+    }
+    .edit {
+      background-color: $color-dark-grey;
+      margin-left: 10px;
+    }
+    .register {
+      background-color: $color-greenery;
+    }
+  }
+}

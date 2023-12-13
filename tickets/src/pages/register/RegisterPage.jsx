@@ -1,7 +1,9 @@
-import React, { useState, useContext } from "react";
+import React, { useState, useContext, useEffect } from "react";
 import { InputField } from "../../components/input/InputField";
 import { UserContext } from "../../components/context/userContext";
 import style from "./register.module.scss"
+import { useNavigate, Link } from "react-router-dom";
+
 
 export const RegisterPage = () => {
   const [errorMsg, setErrorMsg] = useState("");
@@ -14,6 +16,7 @@ export const RegisterPage = () => {
     image: "",
   });
   const { user, saveUserData } = useContext(UserContext);
+  const navigate = useNavigate();
 
   const handleInputChange = (event) => {
     const fieldName = event.target.name;
@@ -24,9 +27,16 @@ export const RegisterPage = () => {
       [fieldName]: fieldValue,
     });
   };
+  useEffect(() => {
+    if (user) {
+      handleRegistration();
+    } else {
+      navigate("/login");
+    }
+  }, [user, navigate]);
 
   const handleRegistration = (event) => {
-    event.preventDefault();
+    /* event.preventDefault(); */
     const { title, location, time, description, date, image } = formData;
 
     if (!title || !location || !time || !date) {

@@ -1,4 +1,6 @@
-import React, { useState } from "react";
+import { useState } from "react";
+import style from "../modal/modal.module.scss"
+import { IoMdClose } from "react-icons/io";
 
 export const Modal = ({ children }) => {
   const [showModal, setShowModal] = useState(false);
@@ -13,19 +15,20 @@ export const Modal = ({ children }) => {
 
   if (!showModal) {
     return (
-      <button className="toggle-button" onClick={openModal}>
-        Se mere
+      <button className={style.toggle} onClick={openModal}>
+        Læs mere
       </button>
     );
   }
 
   return (
-    <div className="modal" id="modal">
+    <div>
       <p>Description</p>
       <div className="content">{children}</div>
       <div className="actions">
-        <button className="toggle-button" onClick={closeModal}>
-          Close
+        <button className={style.toggle} onClick={closeModal}>
+        <IoMdClose />
+
         </button>
       </div>
     </div>

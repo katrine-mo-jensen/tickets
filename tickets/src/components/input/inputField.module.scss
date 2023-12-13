@@ -1,0 +1,13 @@
+.drip {
+  display: flex;
+  flex-direction: column;
+  text-transform: capitalize;
+  
+  input {
+    border-radius: 16px;
+    border: none;
+    height: 30px;
+    padding: 10px;
+    
+  }
+}

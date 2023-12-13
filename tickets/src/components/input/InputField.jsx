@@ -1,3 +1,5 @@
+import style from "./inputField.module.scss"
+
 export const InputField = (props) => {
   const handleChange = (event) => {
     if (props.onChange) {
@@ -6,13 +8,13 @@ export const InputField = (props) => {
   };
 
   return (
-    <div>
+    <div className={style.drip}>
       <label htmlFor={props.name}>{props.name}</label>
       <input
         autoComplete="on"
         name={props.name}
         type={props.type}
-        placeholder={props.placeholder}
+        /* placeholder={props.placeholder} */
         onChange={handleChange} 
       />
     </div>

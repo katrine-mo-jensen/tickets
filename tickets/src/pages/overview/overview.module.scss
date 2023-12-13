@@ -7,11 +7,30 @@
   display: flex;
   justify-content: center;
   flex-direction: column;
+  height: 100%;
+  padding-top: 30px;
+  padding-bottom: 50px;
+  h1{
+    padding-bottom: 30px;
+    text-transform: uppercase;
+  }
   section {
     max-width: 1000px;
-    border: pink solid 1px;
     margin: auto;
     display: grid;
+    gap: 20px;
     grid-template-columns: repeat(4, 1fr);
+    article {
+      border-radius: 16px;
+      background-color: $color-light-grey;
+      img {
+        width: 100%;
+        border-top-right-radius: 16px;
+        border-top-left-radius: 16px;
+      }
+      p{
+        padding-top: 10px;
+      }
+    }
   }
 }

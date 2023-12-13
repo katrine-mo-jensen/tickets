@@ -1,6 +1,7 @@
 import React, { useState, useContext } from "react";
 import { InputField } from "../../components/input/InputField";
 import { UserContext } from "../../components/context/userContext";
+import style from "./register.module.scss"
 
 export const RegisterPage = () => {
   const [errorMsg, setErrorMsg] = useState("");
@@ -57,8 +58,8 @@ export const RegisterPage = () => {
   };
 
   return (
-    <section>
-      <section>
+    <section className={style.container}>
+      <section className={style.neck}>
         <h1>Opret ny</h1>
         <form onSubmit={handleRegistration}>
           <InputField
@@ -93,7 +94,7 @@ export const RegisterPage = () => {
           />
           <InputField
             name="image"
-            type="image"
+            type="text"
             value={formData.image}
             onChange={handleInputChange}
             placeholder="Enter image URL"

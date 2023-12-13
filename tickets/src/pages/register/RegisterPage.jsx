@@ -14,6 +14,7 @@ export const RegisterPage = () => {
     date: "",
     image: "",
   });
+  
   const { user, saveUserData } = useContext(UserContext);
   const navigate = useNavigate();
 

@@ -80,7 +80,9 @@ export const BookingPage = () => {
                 >
                   Fjern
                 </button>
-                <button className={style.edit}>Rediger</button>
+                <button className={style.edit}>
+                  <Link className={style.reg} to="/edit">Rediger</Link>
+                </button>
               </div>
             </article>
           ))}

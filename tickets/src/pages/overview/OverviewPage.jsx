@@ -1,4 +1,4 @@
-import  { useContext, useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { UserContext } from "../../components/context/userContext";
 import { useNavigate } from "react-router-dom";
 import style from "../overview/overview.module.scss";
@@ -20,7 +20,7 @@ export const OverviewPage = () => {
       .then((res) => res.json())
       .then((data) => {
         setEventData(data);
-        console.log("Data event:", data);
+        /* console.log("overview event:", data); */
       })
       .catch((error) => console.error("Error fetching data:", error));
   };

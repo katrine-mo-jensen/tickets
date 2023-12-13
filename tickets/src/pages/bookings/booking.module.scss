@@ -41,6 +41,10 @@
     }
     .register {
       background-color: $color-greenery;
+      .reg{
+        text-decoration: none;
+        color: white;
+      }
     }
   }
 }

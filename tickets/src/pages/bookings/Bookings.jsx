@@ -3,7 +3,7 @@ import { UserContext } from "../../components/context/userContext";
 import { useNavigate, Link } from "react-router-dom";
 import style from "../bookings/booking.module.scss";
 
-//~~!!Edit and register button doesnt work yet!!~~
+//~~!!Edit button doesnt work yet!!~~
 
 export const BookingPage = () => {
   const [eventData, setEventData] = useState([]);
@@ -19,7 +19,7 @@ export const BookingPage = () => {
       .then((res) => res.json())
       .then((data) => {
         setEventData(data);
-        console.log("Data event:", data);
+        /* console.log("booking event:", data); */
       })
       .catch((error) => console.error("Error fetching data:", error));
   };
@@ -87,7 +87,7 @@ export const BookingPage = () => {
           Fjern alle
         </button>
         <button className={style.register}>
-          <Link to="/register">Opret</Link>
+          <Link className={style.reg} to="/register">Opret</Link>
         </button>
       </section>
     </section>

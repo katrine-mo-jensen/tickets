@@ -29,6 +29,7 @@ export const BookingPage = () => {
       fetchEventData();
     } else {
       navigate("/login");
+      alert("Du skal være logget ind")
     }
   }, [user, navigate]);
 

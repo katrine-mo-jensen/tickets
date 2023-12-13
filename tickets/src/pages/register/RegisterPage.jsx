@@ -31,6 +31,7 @@ export const RegisterPage = () => {
       handleRegistration();
     } else {
       navigate("/login");
+      alert("Du skal være logget ind")
     }
   }, [user, navigate]);
 

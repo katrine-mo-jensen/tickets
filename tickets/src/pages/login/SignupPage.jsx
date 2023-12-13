@@ -1,26 +1,22 @@
 import { Link } from "react-router-dom";
 import { useState } from "react";
 import style from "./LoginPage.module.scss";
-import { InputField } from "../../components/InputField";
+import { InputField } from "../../components/input/InputField";
 
 export const SignupPage = () => {
   const [error, setError] = useState("");
 
-  // Submit funktion der opretter en ny bruger i backenden
   const handleSubmit = (event) => {
     event.preventDefault();
 
-    // gemmer alle values is scoped variabler
     let name = event.target.name.value;
     let phone = event.target.phone.value;
     let email = event.target.email.value;
     let password = event.target.password.value;
 
-    // tjekker om variabler er sat
     if (name && email && password && phone) {
       let url = `http://localhost:8081/sign-up`;
 
-      // laver en ny body og tilføjer alle variabler
       let body = new URLSearchParams();
       body.append("name", name);
       body.append("email", email);
@@ -32,7 +28,6 @@ export const SignupPage = () => {
         method: "POST",
       };
 
-      // poster dem til serveren
       fetch(url, options)
         .then((res) => res.json())
         .then((data) => console.log(data));

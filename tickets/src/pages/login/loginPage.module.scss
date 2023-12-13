@@ -4,7 +4,6 @@
   width: 100%;
   background-color: $color-grey;
   display: flex;
-
   align-items: center;
   .form {
     width: 552px;
@@ -16,7 +15,7 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    
+
     section {
       button {
         width: 94px;
@@ -24,18 +23,17 @@
         border-radius: 16px;
         border: none;
         color: white;
-        
       }
       .rightBtn {
         background-color: $color-dark-grey;
       }
       .leftBtn {
         background-color: $color-greenery;
-             
-      }.link {
-          text-decoration: none;
-          color: white;
-        }
+      }
+      .link {
+        text-decoration: none;
+        color: white;
+      }
     }
   }
 }

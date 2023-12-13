@@ -17,8 +17,10 @@ export const Navigation = () => {
   return (
     <nav>
       <section className={style.navigation}>
-        <Link className={style.title} to="/"><h2>Book.it - Din online event kalender</h2></Link>
-        
+        <Link className={style.title} to="/">
+          <h2>Book.it - Din online event kalender</h2>
+        </Link>
+
         <section className={style.burgerMenu}>
           {open ? burgerClosed : burgerOpen}
           {open && <NavLinks />}

@@ -1,5 +1,5 @@
 import React, { useState, useContext } from "react";
-import { InputField } from "../../components/InputField";
+import { InputField } from "../../components/input/InputField";
 import { UserContext } from "../../components/context/userContext";
 
 export const RegisterPage = () => {
@@ -93,7 +93,7 @@ export const RegisterPage = () => {
           />
           <InputField
             name="image"
-            type="text"
+            type="image"
             value={formData.image}
             onChange={handleInputChange}
             placeholder="Enter image URL"

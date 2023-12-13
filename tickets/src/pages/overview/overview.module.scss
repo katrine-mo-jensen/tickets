@@ -2,8 +2,16 @@
 
 .container {
   width: 100%;
+  text-align: center;
   background-color: $color-grey;
   display: flex;
-
-  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  section {
+    max-width: 1000px;
+    border: pink solid 1px;
+    margin: auto;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+  }
 }

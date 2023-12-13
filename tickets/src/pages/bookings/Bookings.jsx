@@ -86,7 +86,9 @@ export const BookingPage = () => {
         <button className={style.remove} onClick={() => handleDeleteAll()}>
           Fjern alle
         </button>
-        <button className={style.register}><Link to="/register">Opret</Link></button>
+        <button className={style.register}>
+          <Link to="/register">Opret</Link>
+        </button>
       </section>
     </section>
   );

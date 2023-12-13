@@ -1,7 +1,7 @@
 export const InputField = (props) => {
   const handleChange = (event) => {
     if (props.onChange) {
-      props.onChange(event); // Propagate the event to the parent component
+      props.onChange(event); 
     }
   };
 
@@ -13,7 +13,7 @@ export const InputField = (props) => {
         name={props.name}
         type={props.type}
         placeholder={props.placeholder}
-        onChange={handleChange} // Trigger the onChange event
+        onChange={handleChange} 
       />
     </div>
   );

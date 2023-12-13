@@ -1,12 +1,11 @@
 @use "../style/variables.scss" as *;
 
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: $font-style;
-    h1{
-        font-size: 2.25rem;
-    }
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: $font-style;
+  h1 {
+    font-size: 2.25rem;
   }
-  
+}

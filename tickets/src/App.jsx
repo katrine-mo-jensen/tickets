@@ -4,7 +4,6 @@ import { LoginPage } from "./pages/login/LoginPage";
 import { BookingPage } from "./pages/bookings/Bookings";
 import { OverviewPage } from "./pages/overview/OverviewPage";
 import { RegisterPage } from "./pages/register/RegisterPage";
-import { WelcomePage } from "./pages/welcome/WelcomePage";
 import { SignupPage } from "./pages/login/SignupPage";
 
 function App() {
@@ -12,13 +11,12 @@ function App() {
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<Layout />}>
-          <Route index element={<WelcomePage />} />
+          <Route index element={<LoginPage />} />
           <Route path="/login" element={<LoginPage />} />
           <Route path="/signup" element={<SignupPage />} />
           <Route path="/booking" element={<BookingPage />} />
           <Route path="/overview" element={<OverviewPage />} />
           <Route path="/register" element={<RegisterPage />} />
-          <Route path="/welcome" element={<WelcomePage />} />
         </Route>
       </Routes>
     </BrowserRouter>

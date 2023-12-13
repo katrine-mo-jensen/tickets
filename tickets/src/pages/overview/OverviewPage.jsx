@@ -1,10 +1,10 @@
 import React, { useContext, useEffect, useState } from "react";
 import { UserContext } from "../../components/context/userContext";
 import { useNavigate } from "react-router-dom";
-import style from "../overview/overview.module.scss"
+import style from "../overview/overview.module.scss";
+import { Modal } from "../../components/modal/Modal";
 
 //~~!!Edit button doesnt work yet!!~~
-
 
 export const OverviewPage = () => {
   const [eventData, setEventData] = useState([]);
@@ -33,20 +33,20 @@ export const OverviewPage = () => {
     }
   }, [user, navigate]);
 
-
-
   return (
     <section className={style.container}>
+      <h1>Min oversigt</h1>
       <section>
-        <h1>Min oversigt</h1>
-
         {Array.isArray(eventData) &&
           eventData.map((item, index) => (
             <article key={index}>
+              <img src={item.image} alt={item.title} />
               <p>{item.title}</p>
               <p>Sted: {item.location}</p>
-              <p>Tid: {item.time} {item.date}</p>
-              
+              <p>
+                Tid: {item.time} {item.date}
+              </p>
+              <Modal />
             </article>
           ))}
       </section>

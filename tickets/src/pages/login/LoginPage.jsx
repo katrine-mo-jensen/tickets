@@ -2,21 +2,19 @@ import { Link } from "react-router-dom";
 import style from "./LoginPage.module.scss";
 import { useContext, useState } from "react";
 import { UserContext } from "../../components/context/userContext";
-import { InputField } from "../../components/InputField";
+import { InputField } from "../../components/input/InputField";
 
 export const LoginPage = () => {
   const [errorMsg, setErrorMsg] = useState("");
   const { setIsLoggedIn, user, setUser, isLoggedIn, saveUserData } =
     useContext(UserContext);
 
-  // Function til at slette userdata i localstorage og sætte isloggedIn til false
   const handleLogout = () => {
     localStorage.clear("user");
     setIsLoggedIn(false);
     setUser();
   };
 
-  // Funktion der sender email og password til server og forsøger at logge ind.
   const handleLogin = (event) => {
     event.preventDefault();
     let email = event.target.email.value;
@@ -85,16 +83,23 @@ export const LoginPage = () => {
           </section>
         ) : (
           <section>
-            <h1>Velkommen {user.name}</h1>
-            
-            <button className={style.rightBtn}>
-              <Link className={style.link} to="/welcome">
-                Dine profil
-              </Link>
-            </button>
-            <button className={style.leftBtn} onClick={handleLogout}>
-              Logout
-            </button>
+            <section className={style.neck}>
+              <h1>Velkommen {user.name}</h1>
+              <h2>Dine informationer</h2>
+              <p>{user.name}</p>
+              <p>Email: {user.email}</p>
+              <p>Tlf: {user.phone}</p>
+              <section>
+                <button className={style.rightBtn}>
+                  <Link className={style.link} to="/overview">
+                    Dine events
+                  </Link>
+                </button>
+                <button className={style.leftBtn} onClick={handleLogout}>
+                  Logout
+                </button>
+              </section>
+            </section>
           </section>
         )}
       </section>

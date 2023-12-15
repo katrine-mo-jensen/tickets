@@ -14,7 +14,7 @@ export const RegisterPage = () => {
     date: "",
     image: "",
   });
-  
+
   const { user, saveUserData } = useContext(UserContext);
   const navigate = useNavigate();
 
@@ -27,13 +27,12 @@ export const RegisterPage = () => {
       [fieldName]: fieldValue,
     });
   };
-  
+
   useEffect(() => {
     if (user) {
       handleRegistration();
     } else {
       navigate("/login");
-      
     }
   }, [user, navigate]);
 
@@ -63,7 +62,6 @@ export const RegisterPage = () => {
         .then((res) => res.json())
         .then((data) => {
           console.log("Data from oprettelse:", data);
-          saveUserData(data);
         });
     }
   };
@@ -73,40 +71,22 @@ export const RegisterPage = () => {
       <section className={style.neck}>
         <h1>Opret ny</h1>
         <form onSubmit={handleRegistration}>
-          <InputField
-            name="title"
-            type="text"
-            value={formData.title}
-            onChange={handleInputChange}
-          />
+          <InputField name="title" type="text" onChange={handleInputChange} />
           <InputField
             name="location"
             type="text"
-            value={formData.location}
             onChange={handleInputChange}
           />
-          <InputField
-            name="time"
-            type="time"
-            value={formData.time}
-            onChange={handleInputChange}
-          />
+          <InputField name="time" type="time" onChange={handleInputChange} />
           <InputField
             name="description"
             type="text"
-            value={formData.description}
             onChange={handleInputChange}
           />
-          <InputField
-            name="date"
-            type="date"
-            value={formData.date}
-            onChange={handleInputChange}
-          />
+          <InputField name="date" type="date" onChange={handleInputChange} />
           <InputField
             name="image"
             type="text"
-            value={formData.image}
             onChange={handleInputChange}
             placeholder="Enter image URL"
           />

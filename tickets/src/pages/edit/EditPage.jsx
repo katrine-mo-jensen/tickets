@@ -1,7 +1,7 @@
 import { useNavigate, useParams } from "react-router-dom";
 import { useContext, useEffect, useState, useCallback } from "react";
 import { UserContext } from "../../components/context/userContext";
-import style from "./edit.module.scss";
+import style from "../register/register.module.scss";
 import { InputField } from "../../components/input/InputField";
 
 export const EditPage = () => {

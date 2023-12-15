@@ -14,7 +14,7 @@ export const InputField = (props) => {
         autoComplete="on"
         name={props.name}
         type={props.type}
-        value={props.value} // Add the value prop to bind to the data
+        value={props.value} 
         onChange={handleChange}
       />
     </div>

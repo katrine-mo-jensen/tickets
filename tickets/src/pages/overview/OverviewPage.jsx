@@ -4,7 +4,7 @@ import { useNavigate } from "react-router-dom";
 import style from "../overview/overview.module.scss";
 import { Modal } from "../../components/modal/Modal";
 
-//~~!!Edit button doesnt work yet!!~~
+
 
 export const OverviewPage = () => {
   const [eventData, setEventData] = useState([]);

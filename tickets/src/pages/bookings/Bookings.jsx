@@ -3,8 +3,6 @@ import { UserContext } from "../../components/context/userContext";
 import { useNavigate, Link } from "react-router-dom";
 import style from "../bookings/booking.module.scss";
 
-//~~!!Edit button doesnt work yet!!~~
-
 export const BookingPage = () => {
   const [eventData, setEventData] = useState([]);
   const { user } = useContext(UserContext);

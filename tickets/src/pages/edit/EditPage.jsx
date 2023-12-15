@@ -27,8 +27,8 @@ export const EditPage = () => {
       fetch(url, options)
         .then((res) => res.json())
         .then((data) => {
-          setEventData(data); // Store the fetched data in state
-          setFormData(data); // Populate the form data with the fetched data
+          setEventData(data); 
+          setFormData(data); 
           /* console.log("get one event:", data); */
         })
         .catch((error) => console.error("Error fetching data:", error));
@@ -87,7 +87,6 @@ export const EditPage = () => {
       <section className={style.neck}>
         <h1>Rediger</h1>
         <form onSubmit={updateEvent}>
-          {/* Update InputFields with the fetched data */}
           <InputField
             name="title"
             type="text"

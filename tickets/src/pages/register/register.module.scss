@@ -7,16 +7,16 @@
   padding-top: 30px;
   .neck {
     margin: auto;
-    max-width: 1000px;
+    width: 1000px;
     background-color: $color-light-grey;
     border-radius: 16px;
     padding-top: 20px;
     display: flex;
     flex-direction: column;
     align-items: center;
-    input {
+    /* input {
       width: 100%;
-    }
+    } */
     button {
       background-color: $color-greenery;
       color: white;

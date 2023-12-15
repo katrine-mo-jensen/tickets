@@ -29,7 +29,6 @@ export const BookingPage = () => {
       fetchEventData();
     } else {
       navigate("/login");
-      
     }
   }, [user, navigate]);
 
@@ -81,7 +80,9 @@ export const BookingPage = () => {
                   Fjern
                 </button>
                 <button className={style.edit}>
-                  <Link className={style.reg} to={`/edit/${item.id}`}>Rediger</Link>
+                  <Link className={style.reg} to={`/edit/${item.id}`}>
+                    Rediger
+                  </Link>
                 </button>
               </div>
             </article>
@@ -90,7 +91,9 @@ export const BookingPage = () => {
           Fjern alle
         </button>
         <button className={style.register}>
-          <Link className={style.reg} to="/register">Opret</Link>
+          <Link className={style.reg} to="/register">
+            Opret
+          </Link>
         </button>
       </section>
     </section>

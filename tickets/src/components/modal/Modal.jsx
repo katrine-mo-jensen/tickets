@@ -51,7 +51,7 @@ export const Modal = () => {
   return (
     <div>
       <p>Description</p>
-      
+
       <div className="actions">
         <button className={style.toggle} onClick={closeModal}>
           <IoMdClose />

@@ -30,7 +30,6 @@ export const OverviewPage = () => {
       fetchEventData();
     } else {
       navigate("/login");
-      
     }
   }, [user, navigate]);
 

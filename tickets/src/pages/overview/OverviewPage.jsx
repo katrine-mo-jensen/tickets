@@ -46,7 +46,7 @@ export const OverviewPage = () => {
               <p>
                 Tid: {item.time} {item.date}
               </p>
-              <Modal />
+              <Modal id={item.id}/>
             </article>
           ))}
       </section>

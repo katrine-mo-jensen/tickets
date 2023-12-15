@@ -1,18 +1,18 @@
 @use "../../style/variables.scss" as *;
 
+// Desktop
 nav {
   background-color: $color-nav-footer;
   color: white;
   width: 100%;
   height: 60px;
-  display: flex;
-  align-items: center;
   .navigation {
     width: 1000px;
     margin: auto;
-    display: flex;
-    justify-content: center;
-    
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    justify-items: center;
+    padding-top: 1%;
     .title {
       text-decoration: none;
       color: white;
@@ -21,18 +21,18 @@ nav {
       position: relative;
       left: 30%;
       font-size: 2rem;
-      
+
       ul {
         list-style-type: none;
         position: absolute;
         top: 40px;
-        right: 0; 
+        right: 0;
         background-color: $color-nav-footer;
         opacity: 80%;
         padding: 20px;
         li {
           padding-bottom: 10px;
-         
+
           a {
             text-decoration: none;
             color: white;
@@ -42,6 +42,14 @@ nav {
     }
   }
 }
-.bruger{
+.bruger {
   background-color: red;
+}
+
+@media only screen and (max-width: 600px) {
+  nav{
+    display: flex;
+    padding: 10px;
+    height: 100%;
+  }
 }

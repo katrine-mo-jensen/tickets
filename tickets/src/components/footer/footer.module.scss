@@ -4,11 +4,11 @@ footer {
   background-color: $color-nav-footer;
   color: white;
   width: 100%;
-  height: 103px;
+  max-height: 103px;
   display: flex;
   align-items: center;
   .footer {
-    width: 1200px;
+    max-width: 1000px;
     margin: auto;
     display: flex;
     justify-content: center;

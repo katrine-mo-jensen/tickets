@@ -6,7 +6,7 @@
   display: flex;
   height: 90vh;
   .form {
-    width: 552px;
+    max-width: 552px;
     background-color: $color-light-grey;
     margin: auto;
     border-radius: 16px;
@@ -45,3 +45,14 @@
     }
   }
 }
+
+
+
+  @media only screen and (max-width: 600px) {
+    .form {
+      width: 90%;
+      section{
+        width: 90%;
+      }
+    }
+  }

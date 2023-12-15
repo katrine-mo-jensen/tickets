@@ -4,7 +4,7 @@ import style from "../modal/modal.module.scss";
 import { IoMdClose } from "react-icons/io";
 import { useNavigate } from "react-router-dom";
 
-export const Modal = () => {
+export const Modal = (props) => {
   const [showModal, setShowModal] = useState(false);
   const [eventData, setEventData] = useState([]);
 
@@ -12,7 +12,7 @@ export const Modal = () => {
   const navigate = useNavigate();
 
   const fetchEventData = () => {
-    let url = "http://localhost:8081/getAll";
+    let url = `http://localhost:8081/getOne/${props.id}`;
     let options = {
       headers: { Authorization: `Bearer ${user.accessToken}` },
     };
@@ -47,7 +47,7 @@ export const Modal = () => {
       </button>
     );
   }
-
+console.log(eventData)
   return (
     <div>
       <p>{eventData.description}</p>

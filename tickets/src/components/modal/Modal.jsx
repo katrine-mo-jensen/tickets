@@ -20,7 +20,7 @@ export const Modal = () => {
       .then((res) => res.json())
       .then((data) => {
         setEventData(data);
-        console.log("overview event:", data);
+        /* console.log("overview event:", data); */
       })
       .catch((error) => console.error("Error fetching data:", error));
   };
@@ -50,8 +50,7 @@ export const Modal = () => {
 
   return (
     <div>
-      <p>Description</p>
-
+      <p>{eventData.description}</p>
       <div className="actions">
         <button className={style.toggle} onClick={closeModal}>
           <IoMdClose />

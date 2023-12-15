@@ -29,7 +29,7 @@ export const EditPage = () => {
         .then((data) => {
           setEventData(data); // Store the fetched data in state
           setFormData(data); // Populate the form data with the fetched data
-          console.log("get one event:", data);
+          /* console.log("get one event:", data); */
         })
         .catch((error) => console.error("Error fetching data:", error));
     } else {

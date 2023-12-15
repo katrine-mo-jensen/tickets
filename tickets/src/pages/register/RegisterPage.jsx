@@ -61,7 +61,7 @@ export const RegisterPage = () => {
       fetch(url, options)
         .then((res) => res.json())
         .then((data) => {
-          console.log("Data from oprettelse:", data);
+          /* console.log("Data from oprettelse:", data); */
         });
     }
   };

@@ -18,7 +18,7 @@ function App() {
           <Route path="/booking" element={<BookingPage />} />
           <Route path="/overview" element={<OverviewPage />} />
           <Route path="/register" element={<RegisterPage />} />
-          <Route path="/edit" element={<EditPage />} />
+          <Route path="/edit/:id" element={<EditPage />} />
         </Route>
       </Routes>
     </BrowserRouter>

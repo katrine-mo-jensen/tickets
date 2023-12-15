@@ -30,7 +30,7 @@ export const OverviewPage = () => {
       fetchEventData();
     } else {
       navigate("/login");
-      alert("Du skal være logget ind")
+      
     }
   }, [user, navigate]);
 

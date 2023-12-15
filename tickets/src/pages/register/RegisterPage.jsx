@@ -2,7 +2,7 @@ import React, { useState, useContext, useEffect } from "react";
 import { InputField } from "../../components/input/InputField";
 import { UserContext } from "../../components/context/userContext";
 import style from "./register.module.scss";
-import { useNavigate, Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 export const RegisterPage = () => {
   const [errorMsg, setErrorMsg] = useState("");
@@ -27,12 +27,13 @@ export const RegisterPage = () => {
       [fieldName]: fieldValue,
     });
   };
+  
   useEffect(() => {
     if (user) {
       handleRegistration();
     } else {
       navigate("/login");
-      alert("Du skal være logget ind")
+      
     }
   }, [user, navigate]);
 

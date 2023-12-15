@@ -1,9 +1,9 @@
-import style from "./inputField.module.scss"
+import style from "./inputField.module.scss";
 
 export const InputField = (props) => {
   const handleChange = (event) => {
     if (props.onChange) {
-      props.onChange(event); 
+      props.onChange(event);
     }
   };
 
@@ -14,8 +14,8 @@ export const InputField = (props) => {
         autoComplete="on"
         name={props.name}
         type={props.type}
-        /* placeholder={props.placeholder} */
-        onChange={handleChange} 
+        value={props.value} // Add the value prop to bind to the data
+        onChange={handleChange}
       />
     </div>
   );

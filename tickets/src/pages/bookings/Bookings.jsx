@@ -1,4 +1,4 @@
-import React, { useContext, useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { UserContext } from "../../components/context/userContext";
 import { useNavigate, Link } from "react-router-dom";
 import style from "../bookings/booking.module.scss";
@@ -29,7 +29,7 @@ export const BookingPage = () => {
       fetchEventData();
     } else {
       navigate("/login");
-      alert("Du skal være logget ind")
+      
     }
   }, [user, navigate]);
 
@@ -81,7 +81,7 @@ export const BookingPage = () => {
                   Fjern
                 </button>
                 <button className={style.edit}>
-                  <Link className={style.reg} to="/edit">Rediger</Link>
+                  <Link className={style.reg} to={`/edit/${item.id}`}>Rediger</Link>
                 </button>
               </div>
             </article>
